@@ -1,0 +1,2028 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pihrtsoft.Snippets</name>
+    </assembly>
+    <members>
+        <member name="T:Pihrtsoft.Snippets.AssemblyReference">
+            <summary>
+            Represents a reference to the assembly.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.AssemblyReference.Clone">
+            <summary>
+            Creates a new <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/> that is a deep copy of the current instance.
+            </summary>
+            <returns>A new <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/> that is a deep copy of the current instance.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.AssemblyReference.AssemblyName">
+            <summary>
+            Gets or sets assembly name.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.AssemblyReference.Url">
+            <summary>
+            Gets or sets url.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.SnippetComparer">
+            <summary>
+            Represents a <see cref="T:Pihrtsoft.Snippets.Snippet"/> comparison operation.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Comparers.SnippetComparer.Title">
+            <summary>
+            Gets a <see cref="T:Pihrtsoft.Snippets.Comparers.SnippetComparer`1"/> that performs a case-sensitive ordinal <see cref="P:Pihrtsoft.Snippets.Snippet.Title"/> comparison.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Comparers.SnippetComparer.Shortcut">
+            <summary>
+            Gets a <see cref="T:Pihrtsoft.Snippets.Comparers.SnippetComparer`1"/> that performs a case-sensitive ordinal <see cref="P:Pihrtsoft.Snippets.Snippet.Shortcut"/> comparison.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.Compare(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Compares two snippets and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.Equals(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Indicates whether two snippets are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.GetHashCode(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="obj">A snippet.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.Equals(System.Object,System.Object)">
+            <summary>
+            Indicates whether two objects are equal.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are both the same type of object and those objects are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer.GetHashCode(System.Object)">
+            <summary>
+            Gets the hash code for the specified object.
+            </summary>
+            <param name="obj">An object.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.AssemblyReferenceDeepEqualityComparer">
+            <summary>
+            Represents a deep comparison for <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.AssemblyReferenceDeepEqualityComparer.Equals(Pihrtsoft.Snippets.AssemblyReference,Pihrtsoft.Snippets.AssemblyReference)">
+            <summary>
+            Indicates whether two assembly references are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.AssemblyReferenceDeepEqualityComparer.GetHashCode(Pihrtsoft.Snippets.AssemblyReference)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/>.
+            </summary>
+            <param name="obj">An assembly reference.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Comparers.AssemblyReferenceDeepEqualityComparer.Instance">
+            <summary>
+            Gets the instance of the <see cref="T:Pihrtsoft.Snippets.Comparers.AssemblyReferenceDeepEqualityComparer"/>.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.LiteralDeepEqualityComparer">
+            <summary>
+            Represents a deep comparison for <see cref="T:Pihrtsoft.Snippets.Literal"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralDeepEqualityComparer.Equals(Pihrtsoft.Snippets.Literal,Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Indicates whether two literals are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralDeepEqualityComparer.GetHashCode(Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.Literal"/>.
+            </summary>
+            <param name="obj">A literal.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Comparers.LiteralDeepEqualityComparer.Instance">
+            <summary>
+            Gets the instance of the <see cref="T:Pihrtsoft.Snippets.Comparers.LiteralDeepEqualityComparer"/>.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.SnippetDeepEqualityComparer">
+            <summary>
+            Represents a deep comparison for <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetDeepEqualityComparer.Equals(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Indicates whether two snippets are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetDeepEqualityComparer.GetHashCode(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="obj">A snipppet.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.LiteralComparer">
+            <summary>
+            Represents a <see cref="T:Pihrtsoft.Snippets.Literal"/> comparison operation.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Comparers.LiteralComparer.Identifier">
+            <summary>
+            Gets a <see cref="T:Pihrtsoft.Snippets.Comparers.LiteralComparer"/> that performs a case-sensitive ordinal <see cref="P:Pihrtsoft.Snippets.Literal.Identifier"/> comparison.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.GetValue(Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Returns a value to compare.
+            </summary>
+            <param name="literal">A literal.</param>
+            <returns>A string that will be used to compare two literals.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.Compare(Pihrtsoft.Snippets.Literal,Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Compares two literals and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.Equals(Pihrtsoft.Snippets.Literal,Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Indicates whether two literals are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Literal"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.GetHashCode(Pihrtsoft.Snippets.Literal)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.Literal"/>.
+            </summary>
+            <param name="obj">A literal.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.Equals(System.Object,System.Object)">
+            <summary>
+            Indicates whether two objects are equal.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are both the same type of object and those objects are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.LiteralComparer.GetHashCode(System.Object)">
+            <summary>
+            Gets the hash code for the specified literal.
+            </summary>
+            <param name="obj">An object.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Comparers.SnippetComparer`1">
+            <summary>
+            Represents a <see cref="T:Pihrtsoft.Snippets.Snippet"/> comparison operation.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.GetValue(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Returns a value to compare.
+            </summary>
+            <param name="snippet">A snippet.</param>
+            <returns>A string that will be used to compare two snippets.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.Compare(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Compares two snippets and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.Equals(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Indicates whether two snippets are equal.
+            </summary>
+            <param name="x">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="y"/>.</param>
+            <param name="y">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are <c>null</c>, or <paramref name="x"/> and <paramref name="y"/> are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.GetHashCode(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Gets the hash code for the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="obj">A snippet.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.Compare(System.Object,System.Object)">
+            <summary>
+            Compares two objects and returns an indication of their relative sort order.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns>A signed integer that indicates the relative values of <paramref name="x"/> and <paramref name="y"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.Equals(System.Object,System.Object)">
+            <summary>
+            Indicates whether two objects are equal.
+            </summary>
+            <param name="x">An object to compare to <paramref name="y"/>.</param>
+            <param name="y">An object to compare to <paramref name="x"/>.</param>
+            <returns><c>true</c> if <paramref name="x"/> and <paramref name="y"/> refer to the same object, or <paramref name="x"/> and <paramref name="y"/> are both the same type of object and those objects are equal; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Comparers.SnippetComparer`1.GetHashCode(System.Object)">
+            <summary>
+            Gets the hash code for the specified object.
+            </summary>
+            <param name="obj">An object.</param>
+            <returns>A 32-bit signed hash code calculated from the value of the <paramref name="obj"/>.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.ShortcutCollection">
+            <summary>
+            Represents the set of shortcuts.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.ShortcutCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.ShortcutCollection"/> class that is empty.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.ShortcutCollection.Sort">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.ShortcutCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.ShortcutCollection.Sort(System.Collections.Generic.IComparer{System.String})">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.ShortcutCollection"/> using the specified comparer.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements.</param>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.LiteralRenamer">
+            <summary>
+            Supports renaming of snippet literal including its occurrences in the code.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralRenamer.Rename(Pihrtsoft.Snippets.Snippet,System.String,System.String)">
+            <summary>
+            Renames snippet literal including its occurrences in the code.
+            </summary>
+            <param name="snippet"><see cref="T:Pihrtsoft.Snippets.Snippet"/> that contains the literal to rename.</param>
+            <param name="oldIdentifier">Old identifier.</param>
+            <param name="newIdentifier">New identifier.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.NamespaceCollection">
+            <summary>
+            Represents the set of namespaces.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.NamespaceCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.NamespaceCollection"/> class that is empty.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.NamespaceCollection.Sort">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.NamespaceCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.NamespaceCollection.Sort(System.Collections.Generic.IComparer{System.String})">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.NamespaceCollection"/> using the specified comparer.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements.</param>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.KeywordCollection">
+            <summary>
+            Represents the set of keywords.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.KeywordCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.KeywordCollection"/> class that is empty.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.KeywordCollection.Sort">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.KeywordCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.KeywordCollection.Sort(System.Collections.Generic.IComparer{System.String})">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.KeywordCollection"/> using the specified comparer.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements.</param>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.LiteralCollection">
+            <summary>
+            Represents the set of <see cref="T:Pihrtsoft.Snippets.Literal"/>s.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/> class that is empty.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.Contains(System.String)">
+            <summary>
+            Determines whether a <see cref="T:Pihrtsoft.Snippets.Literal"/> with a specified identifier is in the <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/>.
+            </summary>
+            <param name="identifier">A literal identifier to search for.</param>
+            <returns><c>true</c> if item is found in the <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.Find(System.String)">
+            <summary>
+            Returns first literal with the specified identifier
+            </summary>
+            <param name="identifier">A literal identifier.</param>
+            <returns>First found literal with the specified identifier.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.Remove(System.String)">
+            <summary>
+            Removes the first occurrence of a literal with a specific identifier
+            </summary>
+            <param name="identifier">A literal identifier.</param>
+            <returns><c>true</c> if item was successfully removed from <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.Sort">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/> using the <see cref="P:Pihrtsoft.Snippets.Comparers.LiteralComparer.Identifier"/> comparer.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.LiteralCollection.Sort(System.Collections.Generic.IComparer{Pihrtsoft.Snippets.Literal})">
+            <summary>
+            Sorts the elements in the entire <see cref="T:Pihrtsoft.Snippets.LiteralCollection"/> using the specified comparer.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IComparer`1"/> implementation to use when comparing elements.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.LiteralCollection.Item(System.String)">
+            <summary>
+            Returns first literal with the specified identifier
+            </summary>
+            <param name="identifier">A literal identifier.</param>
+            <returns>First found literal with the specified identifier.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Placeholder">
+            <summary>
+            Represents a literal placeholder.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Placeholder.EndIdentifier">
+            <summary>
+            Represents 'end' identifier. This field is a constant.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Placeholder.SelectedIdentifier">
+            <summary>
+            Represents 'selected' identifier. This field is a constant.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Placeholder.#ctor(System.Int32,System.String,System.Char)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Placeholder"/> class with a specified index and identifier.
+            </summary>
+            <param name="index">The position at which a placeholder is found.</param>
+            <param name="identifier">The placeholder identifier.</param>
+            <param name="delimiter">A character that encloses the placeholder.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.Index">
+            <summary>
+            Gets literal placeholder index.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.Identifier">
+            <summary>
+            Gets literal placeholder Identifier.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.Delimiter">
+            <summary>
+            Gets literal placeholder delimiter.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.Length">
+            <summary>
+            Gets literal placeholder length.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.FullLength">
+            <summary>
+            Gets literal placeholder length including delimiters.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.EndIndex">
+            <summary>
+            Gets literal placeholder end index.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.IsSystemPlaceholder">
+            <summary>
+            Gets a value indicating whether the current instance is a system placeholder.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.IsEndPlaceholder">
+            <summary>
+            Gets a value indicating whether the current instance has identifier 'end'.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Placeholder.IsSelectedPlaceholder">
+            <summary>
+            Gets a value indicating whether the current instance has identifier 'selected'.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.DuplicateShortcutInfo">
+            <summary>
+            Represents an information about snippets with same shortcut.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.DuplicateShortcutInfo.Shortcut">
+            <summary>
+            Gets snippet shortcut.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.DuplicateShortcutInfo.Snippets">
+            <summary>
+            Gets an enumerable collection of snippets with same shortcut.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetCode">
+            <summary>
+            Represents a code of the <see cref="P:Pihrtsoft.Snippets.SnippetCode.Snippet"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCode.#ctor(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SnippetCode"/> class with the specified snippet.
+            </summary>
+            <param name="snippet">A snippet</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.TextWithDefaultValues">
+            <summary>
+            Gets snippet text where placeholders are replaced with matching literal's value.
+            System placeholders and placeholders which do not have matching literal are removed.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCode.RenamePlaceholder(System.String,System.String)">
+            <summary>
+            Returns a new string in which all occurrences of a specified identifier in the current instance are replaced with another specified identifier.
+            </summary>
+            <param name="oldIdentifier">The identifier to be replaced.</param>
+            <param name="newIdentifier">The idenfier to replace all occurrences of <paramref name="oldIdentifier"/>.</param>
+            <returns>A string where all occurrences of <paramref name="oldIdentifier"/> are replaced with <paramref name="newIdentifier"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="oldIdentifier"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="oldIdentifier"/> is the empty string or <paramref name="newIdentifier"/> is invalid.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCode.RemoveAllPlaceholders">
+            <summary>
+            Returns a new <see cref="T:System.String"/> where all placeholders are removed. Escaped $ characters are left intact.
+            </summary>
+            <returns>A new <see cref="T:System.String"/> where all placeholders are removed.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCode.ReplacePlaceholders(System.String,System.String)">
+            <summary>
+            Returns a new <see cref="T:System.String"/> where all placeholders with the specified identifier are replaced. Escaped $ characters are left intact.
+            </summary>
+            <param name="identifier">A placeholder identifier.</param>
+            <param name="replacement">The string to replace all occurrences of placeholder with the specified identifier.</param>
+            <returns>A new <see cref="T:System.String"/> where all placeholders with the specified identifier are replaced.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.Placeholders">
+            <summary>
+            Gets a collection of literal placeholders.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.EndPlaceholder">
+            <summary>
+            Gets a placeholder with identifier 'end' or <c>null</c> if it is not present.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.SelectedPlaceholder">
+            <summary>
+            Gets a placeholder with identifier 'selected' or <c>null</c> if it is not present.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.ContainsUnclosedDelimiter">
+            <summary>
+            Gets a value indicating whether snippet code contains unclosed delimiter.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.Text">
+            <summary>
+            Gets the snippet code text.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.Delimiter">
+            <summary>
+            Gets the placeholder delimiter.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetCode.Snippet">
+            <summary>
+            Gets the snippet that contains current instance.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetCollection">
+            <summary>
+            Represents the set of <see cref="T:Pihrtsoft.Snippets.Snippet"/>s.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCollection.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SnippetCollection"/> class that is empty.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetCollection.#ctor(System.Collections.Generic.IList{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SnippetCollection"/> class as a wrapper for the specified list.
+            </summary>
+            <param name="list">The list to wrap.</param>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetFile">
+            <summary>
+            Represents a file that has the extension 'snippet' and contains zero or more snippets serialized into xml.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetFile.Extension">
+            <summary>
+            Specifies snippet file extension. This field is a constant.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFile.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> class.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFile.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> class with a specified path.
+            </summary>
+            <param name="fullName">Full name of the snippet file.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetFile.FullName">
+            <summary>
+            Gets or sets the full name.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SnippetFile.Snippets">
+            <summary>
+            Gets a collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetFileSearcher">
+            <summary>
+            Provides a set of static methods that searches for snippet files.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetFileSearcher.Pattern">
+            <summary>
+            Represents search pattern for a snippet file. This field is a constant.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFileSearcher.EnumerateSnippetFiles(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Returns enumerable collection of snippet file names from a specified directories.
+            </summary>
+            <param name="directoryPaths">Enumerable collection of absolute or relative paths to the directories to search.</param>
+            <returns>An enumerable collection of snippet file names.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="directoryPaths"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFileSearcher.EnumerateSnippetFiles(System.Collections.Generic.IEnumerable{System.String},System.IO.SearchOption)">
+            <summary>
+            Returns enumerable collection of snippet file names from a specified directories, optionally searching subdirectories.
+            </summary>
+            <param name="directoryPaths">Enumerable collection of absolute or relative paths to the directories to search.</param>
+            <param name="searchOption">A <see cref="T:System.IO.SearchOption"/> value that specifies whether the search should include all subdirectories or only current directory. The default value is <see cref="F:System.IO.SearchOption.TopDirectoryOnly"/>.</param>
+            <returns>An enumerable collection of snippet file names.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="directoryPaths"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFileSearcher.EnumerateSnippetFiles(System.String)">
+            <summary>
+            Returns enumerable collection of snippet file names from a specified directory.
+            </summary>
+            <param name="directoryPath">The absolute or relative path to the directory to search.</param>
+            <returns>An enumerable collection of snippet file names.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="directoryPath"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetFileSearcher.EnumerateSnippetFiles(System.String,System.IO.SearchOption)">
+            <summary>
+            Returns enumerable collection of snippet file names from a specified directory, optionally searching subdirectories.
+            </summary>
+            <param name="directoryPath">The absolute or relative path to the directory to search.</param>
+            <param name="searchOption">A <see cref="T:System.IO.SearchOption"/> value that specifies whether the search should include all subdirectories or only current directory. The default value is <see cref="F:System.IO.SearchOption.TopDirectoryOnly"/>.</param>
+            <returns>An enumerable collection of snippet file names.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="directoryPath"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.ResultImportance">
+            <summary>
+            Defines an importance of <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult"/>.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Validations.ResultImportance.Information">
+            <summary>
+            Specifies information level.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Validations.ResultImportance.Warning">
+            <summary>
+            Specifies warning level.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Validations.ResultImportance.Error">
+            <summary>
+            Specifies error level.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult">
+            <summary>
+            Represents a result of the <see cref="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Snippet"/> validation.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidationResult.#ctor(Pihrtsoft.Snippets.Snippet,System.String,System.String,Pihrtsoft.Snippets.Validations.ResultImportance)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult"/> class using the specified snippet, code, description a and importance.
+            </summary>
+            <param name="snippet">A snippet.</param>
+            <param name="code">Alphanumeric code the identifies the result.</param>
+            <param name="description">Result description.</param>
+            <param name="importance">Result importance.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidationResult.#ctor(Pihrtsoft.Snippets.Snippet,System.String,System.String,Pihrtsoft.Snippets.Validations.ResultImportance,System.Object)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult"/> class using the specified snippet, code, description, importance and content.
+            </summary>
+            <param name="snippet">A snippet.</param>
+            <param name="code">Alphanumeric code the identifies the result.</param>
+            <param name="description">Result description.</param>
+            <param name="importance">Result importance.</param>
+            <param name="content">Additional result content. The value can be <c>null</c>.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Importance">
+            <summary>
+            Gets the importance level.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Code">
+            <summary>
+            Gets the alphanumeric code of the result.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Description">
+            <summary>
+            Gets the description text.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Snippet">
+            <summary>
+            Gets the <see cref="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Snippet"/> the is the source of the result.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationResult.Content">
+            <summary>
+            Gets the additional content of the result. The value can be <c>null</c>.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.SnippetValidator">
+            <summary>
+            Represents a validator that validates <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidator.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidator"/> class.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidator.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> according the the code snippet schema.
+            </summary>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> that is being validated.</param>
+            <returns>A <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationContext"/> that stores data about the validation.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidator.Validate(Pihrtsoft.Snippets.Validations.SnippetValidationContext)">
+            <summary>
+            Validates the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> according the the code snippet schema.
+            </summary>
+            <param name="context">A <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationContext"/> that stores data about the validation.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="context"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidator.CreateDefaultValidator">
+            <summary>
+            Creates <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidator"/> that contains validation rules defines in <see cref="N:Pihrtsoft.Snippets.Validations"/> namespace.
+            </summary>
+            <returns><see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidator"/> with predefined validation rules.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidator.ValidationRules">
+            <summary>
+            Gets a collection of validation rules.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.SnippetValidationContext">
+            <summary>
+            Represents a context that is used during <see cref="T:Pihrtsoft.Snippets.Snippet"/> validation.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetValidationContext.#ctor(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationContext"/> class with a specified <see cref="P:Pihrtsoft.Snippets.Validations.SnippetValidationContext.Snippet"/> and <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationContext"/>.
+            </summary>
+            <param name="snippet">A <see cref="P:Pihrtsoft.Snippets.Validations.SnippetValidationContext.Snippet"/> that is being validated.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.SnippetValidationContext.Snippet">
+            <summary>
+            Gets the code snippet that is being validated.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ValidationHelper.IsValidShortcut(System.String)">
+            <summary>
+            Gets a value indicating whether the specified <paramref name="value"/> is valid snippet shortcut.
+            </summary>
+            <param name="value">A value to validate.</param>
+            <returns><c>true</c> if <paramref name="value"/> is valid snippet shortcut; Otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ValidationHelper.IsValidLiteralIdentifier(System.String)">
+            <summary>
+            Gets a value indicating whether the specified <paramref name="value"/> is a valid literal identifier.
+            </summary>
+            <param name="value">A value to validate.</param>
+            <returns><c>true</c> if <paramref name="value"/> is valid literal identifier; Otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ValidationHelper.IsValidVersion(System.Version)">
+            <summary>
+            Gets a value indicating whether the specified <see cref="T:System.Version"/> is valid snippet format version.
+            </summary>
+            <param name="version">A <see cref="T:System.Version"/> to validate.</param>
+            <returns><c>true</c> if <paramref name="version"/> is valid snippet format version; Otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.ValidationRule">
+            <summary>
+            Represents the rule for a <see cref="T:Pihrtsoft.Snippets.Snippet"/> validation. This class is abstract.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ValidationRule.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Validations.ValidationRule"/> class.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a specified snippet and returns enumerable collection of <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Validations.SnippetValidationResult"/>.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Validations.ValidationRule.PredefinedRules">
+            <summary>
+            Gets a collection of predefined validation rules.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.CodeValidationRule">
+            <summary>
+            Represents a validation rule for the snippet code.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.CodeValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a code of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.SnippetTypeValidationRule">
+            <summary>
+            Represents a validation rule for the snippet formar version.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.SnippetTypeValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a format version of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.FormatVersionValidationRule">
+            <summary>
+            Represents a validation rule for the snippet formar version.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.FormatVersionValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a format version of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.AssemblyReferenceValidationRule">
+            <summary>
+            Represents a validation rule for the <see cref="T:Pihrtsoft.Snippets.AssemblyReference"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.AssemblyReferenceValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates assembly references of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.LiteralValidationRule">
+            <summary>
+            Represents a validation rule for the snippet literals.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.LiteralValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates literals of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.NamespaceValidationRule">
+            <summary>
+            Represents a validation rule for the snippet namespaces.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.NamespaceValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates namespaces of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.DescriptionValidationRule">
+            <summary>
+            Represents a validation rule for the snippet description.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.DescriptionValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a description of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.ShortcutValidationRule">
+            <summary>
+            Represents the validation rule for the snippet shortcut.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.ShortcutValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a shortcut of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Validations.TitleValidationRule">
+            <summary>
+            Represents the validation rule for a snippet title.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Validations.TitleValidationRule.Validate(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Validates a title of the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="snippet">A snippet to be validated.</param>
+            <returns>Enumerable collection of validation results.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SaveSettings">
+            <summary>
+            Specifies a set of options that enables to modify code snippet serialization process.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SaveSettings.DefaultIndentChars">
+            <summary>
+            Represents default indentation when serializing code snippet into xml. This field is read-only.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SaveSettings.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> class.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.SetDefaultFormat">
+            <summary>
+            Gets or sets a value indicating whether default format version set is when <see cref="P:Pihrtsoft.Snippets.Snippet.FormatVersion"/> value is <c>null</c>.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.IndentChars">
+            <summary>
+            Gets or sets the string to use when indenting.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.OmitDefaultDelimiter">
+            <summary>
+            Gets or sets a value indicating whether Delimiter attribute with value equal to <see cref="F:Pihrtsoft.Snippets.Snippet.DefaultDelimiter"/> will be omitted. Default value is <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.OmitXmlDeclaration">
+            <summary>
+            Gets or sets a value indicating whether to write an XML declaration.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.Comment">
+            <summary>
+            Gets or sets an XML comment that will be added to the snippet file.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SaveSettings.OmitCodeSnippetsElement">
+            <summary>
+            Gets or sets a value indicating whether to write 'CodeSnippets' XML element. This option is relevant only if a single snippet is saved to a file.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SerializationContext">
+            <summary>
+            Represents the context used when <see cref="P:Pihrtsoft.Snippets.SerializationContext.Snippet"/> is serialized into xml.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SerializationContext.#ctor(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.SerializationContext"/> class with a specified code snippet and and settings.
+            </summary>
+            <param name="snippet">A <see cref="P:Pihrtsoft.Snippets.SerializationContext.Snippet"/> instance to serialize.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that enables to modify code snippet serialization process.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SerializationContext.Element">
+            <summary>
+            Gets the element that the code snippet is transformed into.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SerializationContext.Snippet">
+            <summary>
+            Gets the code snippet being serialized.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.SerializationContext.Settings">
+            <summary>
+            Gets the settings that enables to modify code snippet serialization process.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetMapper">
+            <summary>
+            Maps <see cref="T:Pihrtsoft.Snippets.Snippet"/> from and to <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetMapper.MapFromElement(Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement)">
+            <summary>
+            Maps a specified <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/> to the newly created <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+            <param name="element">A <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/> that contains deserialized snippet data.</param>
+            <returns>Newly created <see cref="T:Pihrtsoft.Snippets.Snippet"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="element"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetMapper.MapToElement(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Maps a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.
+            </summary>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <returns>Newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetMapper.MapToElement(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Maps a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>, optionally modifying serialization process.
+            </summary>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <returns>Newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetMapper.MapToElement(System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Maps each element of <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/> sequence to the newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.
+            </summary>
+            <param name="snippets">An enumerable collection of code snippets to be serialized.</param>
+            <returns>An enumerable collection of <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetMapper.MapToElement(System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet},Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Maps each element of <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/> sequence to the newly created <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>, optionally modifying serialization process.
+            </summary>
+            <param name="snippets">An enumerable collection of code snippets to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <returns>An enumerable collection of <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippets"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Snippet">
+            <summary>
+            Represents a code snippet.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Snippet.DefaultDelimiter">
+            <summary>
+            Represents a default delimiter in a snippet code. This field is a constant.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Snippet.DefaultFormatVersion">
+            <summary>
+            Represents code snippet default format version. This field is read-only.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Snippet.DefaultFormatVersionText">
+            <summary>
+            Represents code snippet default format version converted to string. This field is read-only.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Snippet"/> class.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Save(System.String)">
+            <summary>
+            Serializes the current instance to the specified file.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Save(System.String,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes the current instance to the specified file.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Save(System.IO.Stream)">
+            <summary>
+            Serializes the current instance to the specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Save(System.IO.Stream,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes the current instance to the specified <see cref="T:System.IO.Stream"/>, optionally specifying serialization process.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Shortcuts">
+            <summary>
+            Returns snippet shortcut and all alternative shortcuts, if any.
+            </summary>
+            <returns>Sequence of all defined shortcut.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.IsExpansion">
+            <summary>
+            Gets or sets a value indicating whether the current instance has <see cref="F:Pihrtsoft.Snippets.SnippetTypes.Expansion"/> flag set.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.IsSurroundsWith">
+            <summary>
+            Gets or sets a value indicating whether the current instance has <see cref="F:Pihrtsoft.Snippets.SnippetTypes.SurroundsWith"/> flag set.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.IsRefactoring">
+            <summary>
+            Gets or sets a value indicating whether the current instance has <see cref="F:Pihrtsoft.Snippets.SnippetTypes.Refactoring"/> flag set.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.Clone">
+            <summary>
+            Creates a new <see cref="T:Pihrtsoft.Snippets.Snippet"/> that is a deep copy of the current instance.
+            </summary>
+            <returns>A new <see cref="T:Pihrtsoft.Snippets.Snippet"/> that is a deep copy of the current instance</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Snippet.OnTextChanged(System.EventArgs)">
+            <summary>
+            Raises the <see cref="E:Pihrtsoft.Snippets.Snippet.TextChanged"/> event.
+            </summary>
+            <param name="e">An <see cref="T:System.EventArgs"/> that contains the event data.</param>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.FormatVersion">
+            <summary>
+            Gets or sets snippet format version.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Title">
+            <summary>
+            Gets or sets snippet title.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Shortcut">
+            <summary>
+            Gets or sets snippet shortcut.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Description">
+            <summary>
+            Gets or sets snippet description.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Author">
+            <summary>
+            Gets or sets snippet author.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.HelpUrl">
+            <summary>
+            Gets or sets URL the provides additional information about the current instance.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.SnippetTypes">
+            <summary>
+            Gets or sets snippet type.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Keywords">
+            <summary>
+            Gets a collection of snippet keywords.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.AlternativeShortcuts">
+            <summary>
+            Gets a collection of alternative shortcuts.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.HasAlternativeShortcuts">
+            <summary>
+            Gets a value indicating whether snippet contains alternative shortcut.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Namespaces">
+            <summary>
+            Gets a collection of snippet namespaces.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.AssemblyReferences">
+            <summary>
+            Gets a collection of snippet assembly references.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Literals">
+            <summary>
+            Gets a collection of snippet literals.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.ContextKind">
+            <summary>
+            Gets or sets snippet code context.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Language">
+            <summary>
+            Gets or sets code snippet programming language.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Delimiter">
+            <summary>
+            Gets or sets a delimiter that encloses placeholder in the code.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.FilePath">
+            <summary>
+            Gets or sets full path to the snippet file.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Index">
+            <summary>
+            Gets or sets index of a snippet in a snippet file.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.HasDefaultDelimiter">
+            <summary>
+            Gets a value indicating whether the current instance has default delimiter.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.CodeText">
+            <summary>
+            Gets or sets snippet code text.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Code">
+            <summary>
+            Gets the snippet code.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Snippet.Placeholders">
+            <summary>
+            Gets a collection of literal placeholders.
+            </summary>
+        </member>
+        <member name="E:Pihrtsoft.Snippets.Snippet.TextChanged">
+            <summary>
+            Occurs when the snippet text changes.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.ContextKind">
+            <summary>
+            Specifies the location at which a code snippet can be inserted.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.None">
+            <summary>
+            Specifies that the code snippet has no context defined.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.Any">
+            <summary>
+            Specifies that the code snippet can be inserted anywhere.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.File">
+            <summary>
+            Specifies that the code snippet is a full code file.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.MethodBody">
+            <summary>
+            Specifies that the code snippet is a method body.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.MethodDeclaration">
+            <summary>
+            Specifies that the code snippet is a method.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.ContextKind.TypeDeclaration">
+            <summary>
+            Specifies that the code snippet can be inserted anywhere.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Language">
+            <summary>
+            Specifies programming language of a <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.None">
+            <summary>
+            No language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.VisualBasic">
+            <summary>
+            Visual Basic language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.CSharp">
+            <summary>
+            C# language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Cpp">
+            <summary>
+            C++ language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.CPlusPlus">
+            <summary>
+            C++ language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Xml">
+            <summary>
+            XML language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Xaml">
+            <summary>
+            XAML language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.JavaScript">
+            <summary>
+            JavaScript language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Sql">
+            <summary>
+            SQL language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Html">
+            <summary>
+            HTML language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Css">
+            <summary>
+            CSS language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.CoffeeScript">
+            <summary>
+            CoffeeScript language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.C">
+            <summary>
+            C language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.FSharp">
+            <summary>
+            F# language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Go">
+            <summary>
+            Go language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Groovy">
+            <summary>
+            Groovy language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Java">
+            <summary>
+            Java language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Json">
+            <summary>
+            JSON language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Less">
+            <summary>
+            Less language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Markdown">
+            <summary>
+            Markdown language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.ObjectiveC">
+            <summary>
+            Objective C language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.ObjectiveCpp">
+            <summary>
+            Objective C++ language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Perl">
+            <summary>
+            Perl language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Php">
+            <summary>
+            PHP language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.PowerShell">
+            <summary>
+            PowerShell language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Python">
+            <summary>
+            Python language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.R">
+            <summary>
+            R language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Razor">
+            <summary>
+            Razor language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Ruby">
+            <summary>
+            Ruby language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Rust">
+            <summary>
+            Rust language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Sass">
+            <summary>
+            Sass language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Swift">
+            <summary>
+            Swift language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.TypeScript">
+            <summary>
+            TypeScript language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Xsl">
+            <summary>
+            XSL language.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.Language.Yaml">
+            <summary>
+            YAML language.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Literal">
+            <summary>
+            Represents a code snippet literal.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Literal.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Literal"/> class with a specified identifier, tooltip and default value.
+            </summary>
+            <param name="identifier">The <see cref="T:Pihrtsoft.Snippets.Literal"/> identifier.</param>
+            <param name="toolTip">The <see cref="T:Pihrtsoft.Snippets.Literal"/> description.</param>
+            <param name="defaultValue">The <see cref="T:Pihrtsoft.Snippets.Literal"/>default value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="identifier"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Literal.CreateClassNameLiteral(System.String,System.String,System.String)">
+            <summary>
+            Create new <see cref="T:Pihrtsoft.Snippets.Literal"/> with function that returns containing type name.
+            </summary>
+            <param name="identifier">The <see cref="T:Pihrtsoft.Snippets.Literal"/> identifier.</param>
+            <param name="toolTip">The <see cref="T:Pihrtsoft.Snippets.Literal"/> description.</param>
+            <param name="defaultValue">The <see cref="T:Pihrtsoft.Snippets.Literal"/>default value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="identifier"/> is <c>null</c>.</exception>
+            <returns><see cref="T:Pihrtsoft.Snippets.Literal"/> with function that returns containing type name.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Literal.CreateSwitchCasesLiteral(System.String,System.String,System.String,System.String)">
+            <summary>
+            Create new <see cref="T:Pihrtsoft.Snippets.Literal"/> with function generates switch cases.
+            </summary>
+            <param name="identifier">The <see cref="T:Pihrtsoft.Snippets.Literal"/> identifier.</param>
+            <param name="expressionIdentifier">Identifier of the literal that represent switch expression.</param>
+            <param name="toolTip">The <see cref="T:Pihrtsoft.Snippets.Literal"/> description.</param>
+            <param name="defaultValue">The <see cref="T:Pihrtsoft.Snippets.Literal"/>default value.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="identifier"/> is <c>null</c>.</exception>
+            <returns><see cref="T:Pihrtsoft.Snippets.Literal"/> with function that generates switch cases.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Literal.Clone">
+            <summary>
+            Creates a new <see cref="T:Pihrtsoft.Snippets.Literal"/> that is a deep copy of the current instance.
+            </summary>
+            <returns>A new <see cref="T:Pihrtsoft.Snippets.Literal"/> that is a deep copy of the current instance</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.IsEditable">
+            <summary>
+            Gets or sets a value indicating whether literal can be edited by a user when inserting a snippet into code.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.Identifier">
+            <summary>
+            Gets or sets literal identifier.
+            </summary>
+            <exception cref="T:System.ArgumentNullException"></exception>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.ToolTip">
+            <summary>
+            Gets or sets literal tooltip.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.DefaultValue">
+            <summary>
+            Gets or sets literal default value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.Function">
+            <summary>
+            Gets or sets literal function name.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Literal.TypeName">
+            <summary>
+            Gets or sets the type name of the object.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetSerializer">
+            <summary>
+            Manages code snippet serialization and deserialization.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetSerializer.DefaultNamespace">
+            <summary>
+            Represents code snippet default xml namespace. This field is a constant.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Deserialize(System.String,System.IO.SearchOption)">
+            <summary>
+            Returns enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> deserialized from snippet files in a specified directory.
+            </summary>
+            <param name="directoryPath">The absolute or relative path to the directory to search.</param>
+            <param name="searchOption">A <see cref="T:System.IO.SearchOption"/> value that specifies whether the search should include all subdirectories or only current directory.</param>
+            <returns>An enumerable collection <see cref="T:Pihrtsoft.Snippets.Snippet"/> being deserialized.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.DeserializeFiles(System.String,System.IO.SearchOption)">
+            <summary>
+            Returns enumerable collection of <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> deserialized from snippet files in a specified directory.
+            </summary>
+            <param name="directoryPath">The absolute or relative path to the directory to search.</param>
+            <param name="searchOption">A <see cref="T:System.IO.SearchOption"/> value that specifies whether the search should include all subdirectories or only current directory.</param>
+            <returns>An enumerable collection <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> being deserialized.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.DeserializeFile(System.String)">
+            <summary>
+            Returns enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> deserialized from a specified snippet file.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <returns>An enumerable collection <see cref="T:Pihrtsoft.Snippets.Snippet"/> being deserialized.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Deserialize(System.IO.Stream)">
+            <summary>
+            Returns enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> contained by a specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The <see cref="T:System.IO.Stream"/> that contains snippets to deserialize.</param>
+            <returns>Enumerable collection of snippets being deserialized.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="stream"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.String,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> the the specified snippet file.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.String,Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> the the specified snippet file, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="filePath"/> or <paramref name="snippet"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.IO.Stream,Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> the the specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.IO.Stream,Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> the the specified <see cref="T:System.IO.Stream"/>, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="stream"/> or <paramref name="snippet"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.String,System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the specified snippet file.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.String,System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet},Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the specified snippet file, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="filePath">The absolute or relative path to the file.</param>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="filePath"/> or <paramref name="snippets"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(Pihrtsoft.Snippets.SnippetFile)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> to the file.
+            </summary>
+            <param name="snippetFile">A snippet file to be serialized.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippetFile"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(Pihrtsoft.Snippets.SnippetFile,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes the specified <see cref="T:Pihrtsoft.Snippets.SnippetFile"/> to the file, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="snippetFile">A snippet file to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippetFile"/> is <c>null</c>.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.IO.Stream,System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the specified <see cref="T:System.IO.Stream"/>.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.Serialize(System.IO.Stream,System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet},Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to the specified <see cref="T:System.IO.Stream"/>, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="stream">The stream to output this <see cref="T:Pihrtsoft.Snippets.Snippet"/> to.</param>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="stream"/> or <paramref name="snippets"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.CreateXml(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Serializes a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> to xml text.
+            </summary>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <returns>XML text that represents a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.CreateXml(Pihrtsoft.Snippets.Snippet,Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/> to xml text, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="snippet">A <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <returns>XML text that represents a specified <see cref="T:Pihrtsoft.Snippets.Snippet"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippet"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.CreateXml(System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to text.
+            </summary>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <returns>XML text that represents a specified collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetSerializer.CreateXml(System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet},Pihrtsoft.Snippets.SaveSettings)">
+            <summary>
+            Serializes enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to text, optionally using <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> to modify serialization process.
+            </summary>
+            <param name="snippets">Enumerable collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/> to be serialized.</param>
+            <param name="settings">A <see cref="T:Pihrtsoft.Snippets.SaveSettings"/> that modify serialization process.</param>
+            <returns>XML text that represents a specified collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/>.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippets"/> or <paramref name="settings"/> is <c>null</c>.</exception>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.PlaceholderCollection">
+            <summary>
+            Represents the set of <see cref="T:Pihrtsoft.Snippets.Placeholder"/>s. This collection is read-only.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.#ctor(System.Collections.Generic.IList{Pihrtsoft.Snippets.Placeholder})">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/> class that is a read-only wrapper around the specified list.
+            </summary>
+            <param name="list">The list to wrap.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.Contains(System.String)">
+            <summary>
+            Determines whether the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/> contains an item with a specified <paramref name="identifier"/>.
+            </summary>
+            <param name="identifier">A <see cref="P:Pihrtsoft.Snippets.Placeholder.Identifier"/> to search for.</param>
+            <returns><c>true</c> if item is found in the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.ContainsEnd">
+            <summary>
+            Determines whether the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/> contains an item with identifier equal to <see cref="F:Pihrtsoft.Snippets.Placeholder.EndIdentifier"/>.
+            </summary>
+            <returns><c>true</c> if item is found in the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.ContainsSelected">
+            <summary>
+            Determines whether the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/> contains an item with identifier equal to <see cref="F:Pihrtsoft.Snippets.Placeholder.SelectedIdentifier"/>.
+            </summary>
+            <returns><c>true</c> if item is found in the <see cref="T:Pihrtsoft.Snippets.PlaceholderCollection"/>; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.Find(System.String)">
+            <summary>
+            Returns first placeholder with the specified identifier
+            </summary>
+            <param name="identifier">A placeholder identifier.</param>
+            <returns>First found placeholder with the specified identifier.</returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.PlaceholderCollection.FindAll(System.String)">
+            <summary>
+            Returns all placeholders with the specified identifier
+            </summary>
+            <param name="identifier">A placeholder identifier.</param>
+            <returns>Enumerable collection of placeholders with the specified identifier.</returns>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.PlaceholderCollection.Item(System.String)">
+            <summary>
+            Returns first placeholder with the specified identifier
+            </summary>
+            <param name="identifier">A placeholder identifier.</param>
+            <returns>First found placeholder with the specified identifier.</returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetTypes">
+            <summary>
+            Specifies how the code snippet can be inserted into code.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetTypes.None">
+            <summary>
+            Specifies that no snippet type is set.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetTypes.Expansion">
+            <summary>
+            Specifies that the code snippet can be inserted at the cursor.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetTypes.SurroundsWith">
+            <summary>
+            Specifies that the code snippet can be placed around a block of code.
+            </summary>
+        </member>
+        <member name="F:Pihrtsoft.Snippets.SnippetTypes.Refactoring">
+            <summary>
+            Specifies that the code snippet can be used during refactoring.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.SnippetUtility">
+            <summary>
+            Provides a set of static methods that are related to <see cref="T:Pihrtsoft.Snippets.Snippet"/>.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetUtility.FindDuplicateShortcuts(System.Collections.Generic.IEnumerable{Pihrtsoft.Snippets.Snippet})">
+            <summary>
+            Returns enumerable groups of <see cref="T:Pihrtsoft.Snippets.Snippet"/>s that have same shortcut. <see cref="P:Pihrtsoft.Snippets.Comparers.SnippetComparer.Shortcut"/> is used to compare shortcuts.
+            </summary>
+            <param name="snippets">Collection of <see cref="T:Pihrtsoft.Snippets.Snippet"/>s.</param>
+            <returns>Enumerable collection of <see cref="T:Pihrtsoft.Snippets.DuplicateShortcutInfo"/> where each element contains shortcut and snippets with that shortcut.</returns>
+            <exception cref="T:System.ArgumentNullException"><paramref name="snippets"/> is <c>null</c>.</exception>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetUtility.RemoveUnusedLiterals(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Removes all literals that do not have corresponding placeholder (placeholder with same identifier).
+            </summary>
+            <param name="snippet"><see cref="T:Pihrtsoft.Snippets.Snippet"/> to remove literals from.</param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.SnippetUtility.RemoveUnusedPlaceholders(Pihrtsoft.Snippets.Snippet)">
+            <summary>
+            Removes all placeholders that do not have corresponding literal (literal with same identifier).
+            </summary>
+            <param name="snippet"><see cref="T:Pihrtsoft.Snippets.Snippet"/> to remove placeholders from.</param>
+            <returns></returns>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.DeclarationsElement">
+            <summary>
+            Represents Declarations element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.DeclarationsElement.Literals">
+            <summary>
+            Gets or sets array of Literal elements.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.DeclarationsElement.Objects">
+            <summary>
+            Gets or sets array of Object elements.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.CodeElement">
+            <summary>
+            Represents Code element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.Delimiter">
+            <summary>
+            Gets or sets Delimiter attribute value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.Kind">
+            <summary>
+            Gets or sets Kind attribute value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.Language">
+            <summary>
+            Gets or sets Language attribute value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.Code">
+            <summary>
+            Gets or sets Code element value.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.GetSchema">
+            <summary>
+            This method is reserved and should not be used.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.ReadXml(System.Xml.XmlReader)">
+            <summary>
+            Generates an object from its XML representation.
+            </summary>
+            <param name="reader"></param>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Xml.Serialization.CodeElement.WriteXml(System.Xml.XmlWriter)">
+            <summary>
+            Converts an object into its XML representation.
+            </summary>
+            <param name="writer"></param>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.ObjectElement">
+            <summary>
+            Represents Object element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.ObjectElement.Type">
+            <summary>
+            Gets or sets Type element value.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement">
+            <summary>
+            Represents Literal element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="M:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement"/> class.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.Editable">
+            <summary>
+            Gets or sets Editable attribute value. Default value is <c>true</c>.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.ID">
+            <summary>
+            Gets or sets ID element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.ToolTip">
+            <summary>
+            Gets or sets ToolTip element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.Default">
+            <summary>
+            Gets or sets Default element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.LiteralElement.Function">
+            <summary>
+            Gets or sets Function element value.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.ReferenceElement">
+            <summary>
+            Represents Reference element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.ReferenceElement.Assembly">
+            <summary>
+            Gets or sets Assembly element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.ReferenceElement.Url">
+            <summary>
+            Gets or sets Url element.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.ImportElement">
+            <summary>
+            Represents Import element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.ImportElement.Namespace">
+            <summary>
+            Gets or sets Namespace element value.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement">
+            <summary>
+            Represents Header element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.Title">
+            <summary>
+            Gets or sets Title element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.Shortcut">
+            <summary>
+            Gets or sets Shortcut element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.AlternativeShortcuts">
+            <summary>
+            Gets or sets AlternativeShortcuts element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.Description">
+            <summary>
+            Gets or sets Description element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.Author">
+            <summary>
+            Gets or sets Author element values.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.HelpUrl">
+            <summary>
+            Gets or sets HelpUrl element value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.SnippetTypes">
+            <summary>
+            Gets or sets SnippetTypes element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.HeaderElement.Keywords">
+            <summary>
+            Gets or sets Keywords element.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.SnippetElement">
+            <summary>
+            Represents Snippet element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.SnippetElement.Imports">
+            <summary>
+            Gets or sets Imports element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.SnippetElement.References">
+            <summary>
+            Gets or sets References element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.SnippetElement.Declarations">
+            <summary>
+            Gets or sets Declarations element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.SnippetElement.Code">
+            <summary>
+            Gets or sets Code element.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement">
+            <summary>
+            Represents CodeSnippet element in a serialized <see cref="P:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement.Format">
+            <summary>
+            Gets or sets Format attribute value.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement.Header">
+            <summary>
+            Gets or sets Header element.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetElement.Snippet">
+            <summary>
+            Gets or sets Snippet element.
+            </summary>
+        </member>
+        <member name="T:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetsElement">
+            <summary>
+            Represents CodeSnippets element in a serialized <see cref="T:Pihrtsoft.Snippets.Snippet"/>. This class cannot be inherited.
+            </summary>
+        </member>
+        <member name="P:Pihrtsoft.Snippets.Xml.Serialization.CodeSnippetsElement.Snippets">
+            <summary>
+            Gets or sets array of CodeSnippet elements.
+            </summary>
+        </member>
+    </members>
+</doc>
