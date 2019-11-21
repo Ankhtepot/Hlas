@@ -62,14 +62,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Course.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Core Scripts\AnalogClockController.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Core Scripts\AnalogClockHandController.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Core Scripts\AnalogClockHandOptions.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Core Scripts\classes\CustomTime.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Core Scripts\classes\StructuredTime.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Plugs\AnalogClockExternalSourcePlug.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Plugs\AnalogClockSetMultiplierPlug.cs" />
+    <Compile Include="Assets\AnalogClockByFireball\Scripts\Plugs\AnalogClockSetTimePlug.cs" />
     <Compile Include="Assets\Scripts\Constants\enums.cs" />
     <Compile Include="Assets\Scripts\Constants\strings.cs" />
     <Compile Include="Assets\Scripts\Constants\system.cs" />
     <Compile Include="Assets\Scripts\Constants\triggers.cs" />
+    <Compile Include="Assets\Scripts\Course.cs" />
+    <Compile Include="Assets\Scripts\CourseBlock.cs" />
     <Compile Include="Assets\Scripts\CourseConfiguration.cs" />
+    <Compile Include="Assets\Scripts\LogoButton.cs" />
     <Compile Include="Assets\Scripts\MainButton.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\Playlist.cs" />
+    <Compile Include="Assets\Scripts\PlaylistButton.cs" />
+    <Compile Include="Assets\Scripts\PlaylistStore.cs" />
     <Compile Include="Assets\Scripts\ProgramController.cs" />
+    <Compile Include="Assets\Scripts\ProgressBar.cs" />
     <Compile Include="Assets\Scripts\Purchase.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

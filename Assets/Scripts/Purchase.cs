@@ -65,9 +65,7 @@ public class Purchase : MonoBehaviour
     {
         processingOverlayAnimator.SetBool(triggers.SHOW, true);
         configuration.SetPurchased(true);
-        print("before yield");
         yield return new WaitForSecondsRealtime(3f);
-        print("after yield");
         processingOverlayAnimator.SetBool(triggers.SHOW, false);
         BrinfUpMainScreen();
     }

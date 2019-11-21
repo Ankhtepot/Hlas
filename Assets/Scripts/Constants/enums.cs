@@ -25,7 +25,17 @@ namespace Assets.Scripts.Constants {
         {
             OteviraniHlasu,
             Didgeridoo,
-            TibetskeZpivani
+            TibetskeZpivani,
+            Any = 1000
+        }
+
+        [System.Serializable] public enum PredefinedPlaylist
+        {
+            FiveMinutes,
+            TenMinutes,
+            TwentyMinutes,
+            ThirtyMinutes,
+            NotPredefined
         }
     }
 }

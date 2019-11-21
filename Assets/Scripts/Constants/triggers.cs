@@ -5,6 +5,7 @@
     public const string CLOSE = "Close";
     public const string DISABLED = "Disabled";
     public const string ENABLED = "Enabled";
+    public const string EXPAND = "Expand";
     public const string FAILED_CLICK = "FailedClick";
     public const string FAILED_MATCH = "FailedMatch";
     public const string FOCUSED = "Focused";

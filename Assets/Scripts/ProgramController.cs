@@ -13,6 +13,7 @@ public class ProgramController : MonoBehaviour
     [SerializeField] bool OHPurchased = false;
     [SerializeField] bool DGPurchased = false;
     [SerializeField] bool TZPurchased = false;
+    [SerializeField] Course course;
     [Header("MainScreen fields")]
     [SerializeField] MainButton mainButtonPrefab;
     [Header("PurchaseScreen fields")]
@@ -24,23 +25,23 @@ public class ProgramController : MonoBehaviour
     [SerializeField] Purchase purchase;
     [SerializeField] List<MainButton> mainButtons = new List<MainButton>();
     [SerializeField] bool validated = false;
-    private ProgramController instance = null;
+    //private ProgramController instance = null;
 #pragma warning restore 649, 414
 
-    private void Awake()
-    {
-        if (instance != null && instance != this)
-        {
-            print("Destroying duplicate Globals");
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(this);
-        }
-    }
+    //private void Awake()
+    //{
+    //    if (instance != null && instance != this)
+    //    {
+    //        print("Destroying duplicate Globals");
+    //        gameObject.SetActive(false);
+    //        Destroy(gameObject);
+    //    }
+    //    else
+    //    {
+    //        instance = this;
+    //        DontDestroyOnLoad(this);
+    //    }
+    //}
 
     void Start()
     {
@@ -54,10 +55,10 @@ public class ProgramController : MonoBehaviour
 
     private void OnMainButtonClickListener(CourseConfiguration configuration)
     {
-        print("received course MainButtonClick with id: " + configuration.CourseName);
+        //print("received course MainButtonClick with id: " + configuration.CourseName);
         if(configuration.Purchased)
         {
-            setCourseScreen();
+            setCourseScreen(configuration);
         }
         else
         {
@@ -100,7 +101,7 @@ public class ProgramController : MonoBehaviour
     {
         if(mainButtons.Count == 0 && Configurations.Count > 0)
         {
-            print("Setting main screen");
+            //print("Setting main screen");
             createMainButtons();
             subscribeToMainButtons();
             
@@ -118,14 +119,18 @@ public class ProgramController : MonoBehaviour
 
     private void setPurchaseScreen(CourseConfiguration configuration)
     {
-        print("setting purchaseScreen");
+        if (!validated) return;
+
         showHideMainButtons(false);
         purchase.setScreen(configuration);
     }
 
-    private void setCourseScreen()
+    private void setCourseScreen(CourseConfiguration configuration)
     {
-        print("setting courseScreen");
+        if (!validated) return;
+
+        showHideMainButtons(false);
+        course.SetScreen(configuration);
     }
 
     private void showHideMainButtons(bool shown)
@@ -138,6 +143,13 @@ public class ProgramController : MonoBehaviour
 
     private void initialize()
     {
+        if(
+            !course
+            )
+        {
+            return;
+        }
+
         purchase = GetComponent<Purchase>();
         SetMainScreen();
 
