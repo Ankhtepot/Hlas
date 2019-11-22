@@ -17,6 +17,3 @@ MonoBehaviour:
   predefinedPlaylist: 2
   blocks:
   - {fileID: 11400000, guid: 9d7075943c417bf4c90a60cd28d8ec37, type: 2}
-  - {fileID: 11400000, guid: 29a174faf7b56e64ba18c88d4b584542, type: 2}
-  - {fileID: 11400000, guid: 9d7075943c417bf4c90a60cd28d8ec37, type: 2}
-  - {fileID: 11400000, guid: 9d7075943c417bf4c90a60cd28d8ec37, type: 2}

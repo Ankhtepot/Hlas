@@ -72,7 +72,7 @@ public class Course : MonoBehaviour
 
     public void OnPlaylistButtonClick(Playlist playlist)
     {
-        print("Should set player screen");
+        //print("Should set player screen");
         showScreen(false);
         player.SetScreen(configuration, playlist);
     }

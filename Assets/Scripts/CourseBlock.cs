@@ -22,4 +22,9 @@ public class CourseBlock : ScriptableObject
     {
         return clip.length;
     }
+
+    public AudioClip GetClip()
+    {
+        return clip;
+    }
 }

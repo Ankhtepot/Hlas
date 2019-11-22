@@ -246,10 +246,13 @@ public class AnalogClockController : MonoBehaviour
 
     private void moveHandsToNewPositionSmoothly()
     {
-        Hands.ForEach(hand => 
+        if (SearchForHands != HandAssigningMethod.DontUseHands)
         {
-            StartCoroutine(moveHandToNewPositionSmoothly(hand, (float)(getStepValue(hand.HandShows) * countHandValue(hand))));
-        });
+            Hands.ForEach(hand =>
+            {
+                StartCoroutine(moveHandToNewPositionSmoothly(hand, (float)(getStepValue(hand.HandShows) * countHandValue(hand))));
+            }); 
+        }
     }
 
     private IEnumerator moveHandToNewPositionSmoothly(AnalogClockHandController hand, float finalAngle)

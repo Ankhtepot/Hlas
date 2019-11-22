@@ -15,7 +15,7 @@ public class Playlist : ScriptableObject
     public string playlistName;
     [SerializeField] CourseId courseId;
     [SerializeField] PredefinedPlaylist predefinedPlaylist;
-    [SerializeField] List<CourseBlock> blocks = new List<CourseBlock>();
+    public List<CourseBlock> blocks = new List<CourseBlock>();
 
     public PredefinedPlaylist PredefinedPlaylist { get => predefinedPlaylist; }
     public CourseId CourseId { get => courseId; }
@@ -28,6 +28,7 @@ public class Playlist : ScriptableObject
 
     public float GetTotalDuration()
     {
+        //Debug.Log("[GetTotalDuration()] result: " + blocks.Aggregate(0f, (prev, curr) => prev + curr.GetClipLength()));
         return blocks.Aggregate(0f, (prev, curr) => prev + curr.GetClipLength());
     }
 }
