@@ -24,39 +24,33 @@ public class Player : MonoBehaviour
     [SerializeField] Button PauseButton;
     [SerializeField] Button StopButton;
     [SerializeField] AnalogClockController clock;
-    //[SerializeField] AudioSource player;
+    [SerializeField] AudioSource player;
     [Header("Observed fields")]
+    [SerializeField] float startPlayAt = 0f;
     [SerializeField] bool clipsArePlaying = false;
     [SerializeField] List<AudioClip> audioClipList;
-    [SerializeField] AudioSource[] audioSourceArray;
-    [SerializeField] Playlist playlist;
     [SerializeField] CourseConfiguration configuration;
     [SerializeField] float totalPlaylistTime;
     [SerializeField] ProgramController PC;
     [SerializeField] Course course;
     [SerializeField] bool validated = false;
+    private Dictionary<int, ClipDescription> clipMap = new Dictionary<int, ClipDescription>();
 
-    private double nextStartTime = 0d;
-    private bool checkClipsCooldownIsOff = true;
     public const string ZERO_HOURS = "00:00";
+    public int currentlyPlayingSongNr = 0;
 #pragma warning restore 649, 414
 
     void Start()
     {
-        initilize();        
+        initilize();
     }
-
-    
 
     void Update()
     {
-        if(clipsArePlaying && checkClipsCooldownIsOff)
-        {
-            StartCoroutine(checkIfAllClipsFinished());
-        }
+        managePlaySequence();
     }
 
-        public void FetchCourseScreen()
+    public void FetchCourseScreen()
     {
         clear();
         course.SetScreen(configuration);
@@ -68,21 +62,14 @@ public class Player : MonoBehaviour
         PC.SetMainScreen();
     }
 
-    private void clear()
-    {
-        StopPlaying();
-        animator.SetBool(triggers.SHOW, false);
-        audioClipList.Clear();
-    }
-
     public void SetScreen(CourseConfiguration configuration, Playlist playlist)
     {
         if (!validated) return;
 
         this.configuration = configuration;
-        this.playlist = playlist;
         totalPlaylistTime = playlist.GetTotalDuration();
-        fillAudioClipArray(playlist);
+        fillAudioClipList(playlist);
+        fillClipMap(audioClipList);
 
         clock.SetTimeFramework(0, 0, totalPlaylistTime, 0, 0, 0d, false);
 
@@ -96,53 +83,38 @@ public class Player : MonoBehaviour
         animator.SetBool(triggers.SHOW, true);
     }
 
-    private void fillAudioClipArray(Playlist playlist)
-    {
-        playlist.blocks.ForEach(block =>
-        {
-            if(block.GetClip())
-            {
-                audioClipList.Add(block.GetClip());
-            }
-        });
-    }
 
-    private string timeTextFromCycleTime(float cycleTime)
-    {
-        int minutes = (int)(cycleTime / 60f);
-        int seconds = (int)(cycleTime - (minutes * 60f));
-        //print($"[timeTextFromCycleTime] minutes: {minutes} seconds: {seconds}");
-        return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
-    }
 
     public void StartPlaying()
     {
-        if(audioClipList.Count == 0)
+        StartPlaying(startPlayAt);
+    }
+
+    public void StartPlaying(float startTime)
+    {
+        if (audioClipList.Count == 0)
         {
             Debug.LogWarning("Player: there are no clips to play.");
             return;
         }
 
-        nextStartTime = 0;
+        clock.SetActive(false);
+        clipsArePlaying = false;
 
         PlayButton.interactable = false;
         PauseButton.interactable = true;
         StopButton.interactable = true;
 
-        //print("Starting playing");
-
         if (AudioListener.pause == false)
         {
-            clock.SetCurrentTime(0, 0, 0f);
+            setStartPosition(startTime);
 
-            audioSourceArray = new AudioSource[audioClipList.Count];
-            for (int i = 0; i < audioClipList.Count; i++)
-            {
-                audioSourceArray[i] = gameObject.AddComponent<AudioSource>();
-                audioSourceArray[i].clip = audioClipList[i];
-                audioSourceArray[i].PlayScheduled(AudioSettings.dspTime + nextStartTime);
-                nextStartTime += audioClipList[i].length;
-            } 
+            clock.SetCurrentTime(0, 0, startPlayAt);
+
+            player.clip = audioClipList[currentlyPlayingSongNr];
+            player.time = startPlayAt;
+            clock.SetCurrentTime(0, 0, startTime);
+            player.Play();
         }
         else
         {
@@ -150,13 +122,12 @@ public class Player : MonoBehaviour
         }
 
         clock.SetActive(true);
+        startPlayAt = 0f;
         clipsArePlaying = true;
     }
 
     public void PausePlaying()
     {
-        //print("Pausing playing");
-
         PlayButton.interactable = true;
         PauseButton.interactable = false;
         StopButton.interactable = true;
@@ -167,78 +138,119 @@ public class Player : MonoBehaviour
 
     public void StopPlaying()
     {
-        //print("Stopping playing");
-
         PlayButton.interactable = true;
         PauseButton.interactable = false;
         StopButton.interactable = false;
 
-        foreach (var source in audioSourceArray)
-        {
-            source.Stop();            
-        }
+        player.Stop();
+        currentlyPlayingSongNr = 0;
 
         clipsArePlaying = false;
-        
+
         clock.SetActive(false);
+
+        slider.onValueChanged.RemoveListener(sliderOnChangeListener);
+        slider.value = 0f;
+        slider.onValueChanged.AddListener(sliderOnChangeListener);
+
         progressBar.SetValueDirectly(1f);
         AudioListener.pause = false;
-        checkClipsCooldownIsOff = true;
         StopAllCoroutines();
         currentTimeText.text = ZERO_HOURS;
     }
 
-    private IEnumerator checkIfAllClipsFinished()
+    private void clear()
     {
-        //print("Checking is clips are playing");
-        checkClipsCooldownIsOff = false;
-        yield return new WaitForSeconds(1f);
-
-        bool noSourcePlaying = true;
-
-        foreach (var source in audioSourceArray)
-        {
-            if (source.isPlaying)
-            {
-                //print(source.name + " is playing");
-                noSourcePlaying = false;
-            }
-        }
-
-        if(noSourcePlaying)
-        {
-            //print("noSourcePlaying = true");
-            clipsArePlaying = false;
-
-            clock.SetActive(false);
-
-            if (!AudioListener.pause)
-            {
-                clock.SetCurrentTime(0, 0, 0f);
-                progressBar.SetValueDirectly(1f);
-                currentTimeText.text = ZERO_HOURS;
-            }
-
-            PlayButton.interactable = true;
-            PauseButton.interactable = false;
-            StopButton.interactable = AudioListener.pause ? true : false;
-        }
-
-        checkClipsCooldownIsOff = true;
+        StopPlaying();
+        animator.SetBool(triggers.SHOW, false);
+        audioClipList.Clear();
+        clipMap.Clear();
     }
-    
+
+    private void managePlaySequence()
+    {
+        if (clipsArePlaying && !AudioListener.pause && !player.isPlaying)
+        {
+            if (currentlyPlayingSongNr == audioClipList.Count - 1)
+            {
+                StopPlaying();
+            }
+            else
+            {
+                currentlyPlayingSongNr++;
+                player.clip = audioClipList[currentlyPlayingSongNr];
+                player.time = 0f;
+                player.Play();
+            }
+        }
+    }
+
+    private void fillAudioClipList(Playlist playlist)
+    {
+        playlist.blocks.ForEach(block =>
+        {
+            if (block.GetClip())
+            {
+                audioClipList.Add(block.GetClip());
+            }
+        });
+    }
+
+    private void fillClipMap(List<AudioClip> clips)
+    {
+        float startTime = 0;
+
+        for (int i = 0; i < clips.Count; i++)
+        {
+            clipMap.Add(i, new ClipDescription(startTime, startTime + clips[i].length));
+            startTime += clips[i].length;
+        }
+    }
+
+    private string timeTextFromCycleTime(float cycleTime)
+    {
+        int minutes = (int)(cycleTime / 60f);
+        int seconds = (int)(cycleTime - (minutes * 60f));
+        return (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+    }
+
+    private void setStartPosition(float startT)
+    {
+        float durationSoFar = 0;
+
+        for (int i = 0; i < clipMap.Count; i++)
+        {
+            if (startT >= clipMap[i].startTime && startT <= clipMap[i].endTime)
+            {
+                currentlyPlayingSongNr = i;
+                startPlayAt = startT - durationSoFar;
+                break;
+            }
+            else
+            {
+                durationSoFar += clipMap[i].duration;
+            }
+        }
+    }
+
     private void OnClockSecondsChange(double seconds)
     {
-        if(clipsArePlaying)
+        if (clipsArePlaying)
         {
             progressBar.SetValueReverseOne((float)seconds / totalPlaylistTime);
             currentTimeText.text = timeTextFromCycleTime((float)seconds);
         }
     }
 
+    private void sliderOnChangeListener(float value)
+    {
+        float oneProc = totalPlaylistTime / 100f;
+        StartPlaying(value * 100 * oneProc);
+    }
+
     private void initilize()
     {
-        if(
+        if (
             !progressBar
             || !courseText
             || !playingInfoText
@@ -252,7 +264,7 @@ public class Player : MonoBehaviour
             || !PauseButton
             || !StopButton
             )
-        {            
+        {
             Debug.LogWarning("Player: one or more components are not assigned.");
             return;
         }
@@ -262,6 +274,24 @@ public class Player : MonoBehaviour
 
         clock.OnSecondsChange.AddListener(OnClockSecondsChange);
 
+        slider.onValueChanged.AddListener(sliderOnChangeListener);
+
         validated = true;
     }
+
+    private class ClipDescription
+    {
+        public float startTime = 0f;
+        public float endTime = 0f;
+        public float duration = 0f;
+
+        public ClipDescription(float startTime, float endTime)
+        {
+            this.startTime = startTime;
+            this.endTime = endTime;
+            this.duration = endTime - startTime;
+        }
+    }
 }
+
+
