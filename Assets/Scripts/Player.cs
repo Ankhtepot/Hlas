@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.UI;
 
 //Fireball Games * * * PetrZavodny.com
@@ -29,12 +26,12 @@ public class Player : MonoBehaviour
     [SerializeField] float startPlayAt = 0f;
     [SerializeField] bool clipsArePlaying = false;
     [SerializeField] List<AudioClip> audioClipList;
+    [SerializeField] ClipDescription[] clipDescriptions;
     [SerializeField] CourseConfiguration configuration;
     [SerializeField] float totalPlaylistTime;
     [SerializeField] ProgramController PC;
     [SerializeField] Course course;
     [SerializeField] bool validated = false;
-    private Dictionary<int, ClipDescription> clipMap = new Dictionary<int, ClipDescription>();
 
     public const string ZERO_HOURS = "00:00";
     public int currentlyPlayingSongNr = 0;
@@ -69,7 +66,8 @@ public class Player : MonoBehaviour
         this.configuration = configuration;
         totalPlaylistTime = playlist.GetTotalDuration();
         fillAudioClipList(playlist);
-        fillClipMap(audioClipList);
+        clipDescriptions = new ClipDescription[audioClipList.Count];
+        fillClipDescriptions(audioClipList);
 
         clock.SetTimeFramework(0, 0, totalPlaylistTime, 0, 0, 0d, false);
 
@@ -164,7 +162,7 @@ public class Player : MonoBehaviour
         StopPlaying();
         animator.SetBool(triggers.SHOW, false);
         audioClipList.Clear();
-        clipMap.Clear();
+        clipDescriptions = new ClipDescription[0];
     }
 
     private void managePlaySequence()
@@ -196,13 +194,13 @@ public class Player : MonoBehaviour
         });
     }
 
-    private void fillClipMap(List<AudioClip> clips)
+    private void fillClipDescriptions(List<AudioClip> clips)
     {
         float startTime = 0;
 
         for (int i = 0; i < clips.Count; i++)
         {
-            clipMap.Add(i, new ClipDescription(startTime, startTime + clips[i].length));
+            clipDescriptions[i] = new ClipDescription(startTime, startTime + clips[i].length);
             startTime += clips[i].length;
         }
     }
@@ -218,9 +216,9 @@ public class Player : MonoBehaviour
     {
         float durationSoFar = 0;
 
-        for (int i = 0; i < clipMap.Count; i++)
+        for (int i = 0; i < clipDescriptions.Length; i++)
         {
-            if (startT >= clipMap[i].startTime && startT <= clipMap[i].endTime)
+            if (startT >= clipDescriptions[i].startTime && startT <= clipDescriptions[i].endTime)
             {
                 currentlyPlayingSongNr = i;
                 startPlayAt = startT - durationSoFar;
@@ -228,7 +226,7 @@ public class Player : MonoBehaviour
             }
             else
             {
-                durationSoFar += clipMap[i].duration;
+                durationSoFar += clipDescriptions[i].duration;
             }
         }
     }
