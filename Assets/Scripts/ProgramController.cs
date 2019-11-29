@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using static Assets.Scripts.Constants.enums;
@@ -16,13 +18,13 @@ public class ProgramController : MonoBehaviour
     [SerializeField] Course course;
     [Header("MainScreen fields")]
     [SerializeField] MainButton mainButtonPrefab;
-    [Header("PurchaseScreen fields")]
+    [SerializeField] Purchase purchase;
     [Header("Configurations")]
     [SerializeField] List<CourseConfiguration> Configurations = new List<CourseConfiguration>();
     [SerializeField] GameObject MainButtonParent;
+    [SerializeField] TMP_FontAsset TMPFont;
     [Header("Observed fields")]
     [SerializeField] int purchasedCoursesCount = 0;
-    [SerializeField] Purchase purchase;
     [SerializeField] List<MainButton> mainButtons = new List<MainButton>();
     [SerializeField] bool validated = false;
     //private ProgramController instance = null;
@@ -104,7 +106,7 @@ public class ProgramController : MonoBehaviour
             //print("Setting main screen");
             createMainButtons();
             subscribeToMainButtons();
-            
+            SetTMPFontAsset(TMPFont);
         }
         else
         {
@@ -113,6 +115,17 @@ public class ProgramController : MonoBehaviour
             foreach (var button in mainButtons)
             {
                 button.SetPurchasedText(button.Configuration.Purchased);
+            }
+        }
+    }
+
+    public void SetTMPFontAsset(TMP_FontAsset newFont)
+    {
+        if (newFont && FindObjectOfType<TextMeshProUGUI>().font != newFont)
+        {
+            foreach (var tmp in FindObjectsOfType<TextMeshProUGUI>())
+            {
+                tmp.font = newFont;
             }
         }
     }
@@ -150,7 +163,8 @@ public class ProgramController : MonoBehaviour
             return;
         }
 
-        purchase = GetComponent<Purchase>();
+        
+
         SetMainScreen();
 
         validated = true;

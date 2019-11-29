@@ -18,29 +18,8 @@ public class CourseConfiguration : ScriptableObject
     [Header("Visual Options")]
     [SerializeField] Color buttonBackgroundColor;
     [SerializeField] Color buttonTextColor;
-
-    //Events
-    [HideInInspector] public UnityEvent OnButtonBackgroundColorChange;
-    [HideInInspector] public UnityEvent OnButtonTextColorChange;
-
-    public Color ButtonBackgroundColor 
-    {
-        get  => buttonBackgroundColor;
-        set 
-        {
-            buttonBackgroundColor = value;
-            OnButtonBackgroundColorChange.Invoke();
-        }
-    }
-
-    public Color ButtonTextColor {
-        get => buttonTextColor;
-        set {
-            buttonBackgroundColor = value;
-            OnButtonTextColorChange.Invoke();
-        }
-    }
-
+    public Color ButtonBackgroundColor { get => buttonBackgroundColor; set => buttonBackgroundColor = value; }
+    public Color ButtonTextColor { get => buttonTextColor; set => buttonBackgroundColor = value; }
     public CourseId CourseId { get => courseId; }
     public bool Purchased { get => purchased; }
     public int Prize { get => prize; }

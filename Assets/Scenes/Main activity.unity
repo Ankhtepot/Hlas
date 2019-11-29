@@ -1360,6 +1360,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508692203}
   - component: {fileID: 508692204}
+  - component: {fileID: 508692205}
   m_Layer: 5
   m_Name: Purchase
   m_TagString: Untagged
@@ -1409,6 +1410,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &508692205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 508692202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da14bf94c938baa45a9f26b22a42136f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buyCourseText: {fileID: 852086741}
+  YesButton: {fileID: 1806952970}
+  NoButton: {fileID: 1146390835}
+  animator: {fileID: 508692204}
+  processingOverlayAnimator: {fileID: 837323016}
+  PC: {fileID: 1102334176}
+  validated: 0
+  configuration: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,7 +3288,7 @@ PrefabInstance:
     - target: {fileID: 6752800776298959675, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5000005
+      value: 0.6000017
       objectReference: {fileID: 0}
     - target: {fileID: 205774808252021548, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
@@ -3824,7 +3845,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1102334177}
   - component: {fileID: 1102334176}
-  - component: {fileID: 1102334178}
   m_Layer: 0
   m_Name: ProgramController
   m_TagString: Untagged
@@ -3850,13 +3870,14 @@ MonoBehaviour:
   course: {fileID: 1498616620}
   mainButtonPrefab: {fileID: 6752800776500835875, guid: dbf8e15dcce830d43a79742e107c839e,
     type: 3}
+  purchase: {fileID: 508692205}
   Configurations:
   - {fileID: 11400000, guid: c1ebcdf5e2932b7458da1c802132fb46, type: 2}
   - {fileID: 11400000, guid: c9d85efa56df68346bc4609927e0e8f5, type: 2}
   - {fileID: 11400000, guid: 9312c3e813182f742ac2f8033912e638, type: 2}
   MainButtonParent: {fileID: 1872784779}
+  TMPFont: {fileID: 11400000, guid: 41aade26f5862b54c8588c29aec746f8, type: 2}
   purchasedCoursesCount: 0
-  purchase: {fileID: 0}
   mainButtons: []
   validated: 0
 --- !u!4 &1102334177
@@ -3873,26 +3894,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1102334178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1102334175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da14bf94c938baa45a9f26b22a42136f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buyCourseText: {fileID: 852086741}
-  YesButton: {fileID: 1806952970}
-  NoButton: {fileID: 1146390835}
-  animator: {fileID: 508692204}
-  processingOverlayAnimator: {fileID: 837323016}
-  PC: {fileID: 1102334176}
-  validated: 0
-  configuration: {fileID: 0}
 --- !u!1 &1146390833
 GameObject:
   m_ObjectHideFlags: 0
@@ -3975,7 +3976,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1102334178}
+      - m_Target: {fileID: 508692205}
         m_MethodName: NoClick
         m_Mode: 1
         m_Arguments:
@@ -5384,7 +5385,7 @@ PrefabInstance:
     - target: {fileID: 6752800776298959675, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5
+      value: 0.60000134
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a6c10f87108a4b41b2faed04ed9d0e6, type: 3}
@@ -5615,7 +5616,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1102334178}
+      - m_Target: {fileID: 508692205}
         m_MethodName: YesClick
         m_Mode: 1
         m_Arguments:
@@ -6965,7 +6966,7 @@ PrefabInstance:
     - target: {fileID: 6752800776298959675, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5000005
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 205774808252021548, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
@@ -7129,7 +7130,7 @@ PrefabInstance:
     - target: {fileID: 6752800776298959675, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.5000005
+      value: 0.6000017
       objectReference: {fileID: 0}
     - target: {fileID: 205774808252021548, guid: 6a6c10f87108a4b41b2faed04ed9d0e6,
         type: 3}
